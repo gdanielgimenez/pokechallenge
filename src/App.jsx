@@ -5,9 +5,6 @@ import { Display, Filter, Pages } from './components/index';
 import { fetchPokemon } from './components/api/api';
 import './App.css';
 
-const details = (name) => {
-  console.log(name);
-};
 function App() {
   const [pokemon, setPokemon] = useState(['']);
   const [pokeList, setPokeList] = useState(['']);
@@ -26,15 +23,24 @@ function App() {
       setPokemon(pokeList);
     }
   };
+  const search = (name) => {
+    const result = pokeList.filter((poke) => poke.name.toLowerCase() === name.toLowerCase());
+    console.log(result);
+    if (result.length > 0) {
+      setPokemon(result);
+    } else {
+      alert('pokemon not found try again');
+    }
+  };
   return (
     <div className="App">
       <Router>
         <Switch>
           <Route exact path="/">
-            <Filter dropFilter={dropFilter} pokeList={pokeList} />
+            <Filter dropFilter={dropFilter} pokeList={pokeList} search={search} />
             <div className="App-header">
               <Typography variant="h3" color="primary"> Pokemon list </Typography>
-              <Display pokemon={pokemon} pokelist={pokeList} details={details} />
+              <Display pokemon={pokemon} pokelist={pokeList} />
             </div>
           </Route>
           <Route exact path="/:pokemonId">
@@ -46,5 +52,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

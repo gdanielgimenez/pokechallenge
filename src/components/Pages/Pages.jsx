@@ -27,14 +27,18 @@ function Pages({ pokemon }) {
               <Typography variant="h6">
                 {' '}
                 Type:
-                {pokemonPage[0].types}
+                {pokemonPage[0].subtype}
               </Typography>
               <Typography variant="h7">
                 {' '}
-                Weakness:
-                {pokemonPage[0].weaknesses[0].type}
+                series:
+                {pokemonPage[0].series}
               </Typography>
-
+              <Typography variant="h7">
+                {' '}
+                rarity:
+                {pokemonPage[0].rarity}
+              </Typography>
             </CardContent>
           </Card>
         ) : (<p>no users found please reload</p>)}

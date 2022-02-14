@@ -1,0 +1,18 @@
+.media {
+    width:auto;
+    object-fit:contain !important;  
+  }
+  
+    .cont{
+      display: flex;
+      flex-direction: row;
+      margin-top: 5%;
+      border: 1px solid grey;
+      margin-left: 10%;
+      margin-right: 0%;
+      padding: 10%;
+      height: auto;
+      width:350px;
+      align-items:center;
+      text-align:left;
+    }

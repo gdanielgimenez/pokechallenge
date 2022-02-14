@@ -9,7 +9,6 @@ import {
 function Filter({ dropFilter, pokeList }) {
   const [value, setValue] = useState(['']);
   const handleChange = (e) => {
-    console.log(e.target.value);
     setValue(e.target.value);
     dropFilter(e.target.value);
   };

@@ -1,11 +1,12 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import {
-  Card, CardMedia, Grid, Typography, CardContent, Container, CardActions, Button, CardHeader,
+  Card, CardMedia, Grid, Typography, CardContent, Container, CardActions, CardHeader,
 } from '@mui/material';
+import { Link } from 'react-router-dom';
 import styles from './Display.module.css';
 
-function Display({ pokemon, details }) {
+function Display({ pokemon }) {
   const pokemonList = pokemon.length ? (
     pokemon.sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1))
       .map((poke) => (
@@ -24,7 +25,9 @@ function Display({ pokemon, details }) {
             />
             <CardContent>
               <CardActions>
-                <Button className={styles.button} color="primary" variant="text" size="small" onClick={() => details(poke.name)}>details</Button>
+                <Link className={styles.link} to={`${poke.name}`}>
+                  details
+                </Link>
               </CardActions>
             </CardContent>
           </Card>

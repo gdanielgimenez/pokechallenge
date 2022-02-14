@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Typography } from '@mui/material';
-import { Display, Filter } from './components/index';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Display, Filter, Pages } from './components/index';
 import { fetchPokemon } from './components/api/api';
 import './App.css';
 
@@ -27,11 +28,21 @@ function App() {
   };
   return (
     <div>
-      <Filter dropFilter={dropFilter} pokeList={pokeList} />
-      <div className="App-header">
-        <Typography variant="h3" color="primary"> Pokemon list </Typography>
-        <Display pokemon={pokemon} pokelist={pokeList} details={details} />
-      </div>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Filter dropFilter={dropFilter} pokeList={pokeList} />
+            <div className="App-header">
+              <Typography variant="h3" color="primary"> Pokemon list </Typography>
+              <Display pokemon={pokemon} pokelist={pokeList} details={details} />
+            </div>
+          </Route>
+          <Route exact path="/:pokemonId">
+            <Pages pokemon={pokemon} />
+          </Route>
+
+        </Switch>
+      </Router>
     </div>
   );
 }

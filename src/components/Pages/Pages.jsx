@@ -23,7 +23,7 @@ function Pages({ pokemon }) {
               title="profile"
             />
             <CardContent>
-              <Typography variant="h6" color="primary">{pokemonPage[0].name}</Typography>
+              <Typography variant="h5" color="primary">{pokemonPage[0].name}</Typography>
               <Typography variant="h6">
                 {' '}
                 Type:

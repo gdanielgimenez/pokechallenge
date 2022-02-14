@@ -64,7 +64,7 @@ function Filter({ dropFilter, pokeList, search }) {
                 onChange={handleSearch}
                 value={searchValue}
               />
-              <Button type="submit" size="small" variant="contained">Search</Button>
+              <Button type="submit" size="large" variant="outlined" color="inherit">Search</Button>
             </form>
           </Toolbar>
         </AppBar>

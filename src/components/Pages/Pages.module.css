@@ -11,8 +11,10 @@
       margin-left: 10%;
       margin-right: 0%;
       padding: 10%;
-      height: auto;
-      width:350px;
+      height: 200px;
+      width:500px;
       align-items:center;
-      text-align:left;
+    }
+    body {
+      background-color: lightblue;
     }

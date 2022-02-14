@@ -1,0 +1,17 @@
+.profile{
+    width: 210px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card{
+    width: 210px;
+    height: 425px;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 14px;
+}
+.button{
+    margin-left: 72%!important;
+}

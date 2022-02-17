@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import {
-  Card, CardMedia, Grid, Typography, CardContent, Container, CardActions, CardHeader,
+  Card, CardMedia, Grid, Typography, CardContent, Container, CardActions,
 } from '@mui/material';
 import { Link } from 'react-router-dom';
 import styles from './Display.module.css';
@@ -12,13 +12,6 @@ function Display({ pokemon }) {
       .map((poke) => (
         <Grid item lg={3} key={poke.id}>
           <Card variant="outlined" className={styles.card}>
-            <CardHeader
-              title={(
-                <Typography variant="h6" color="primary">
-                  {poke.name}
-                </Typography>
-              )}
-            />
             <CardMedia
               className={styles.profile}
               component="img"
@@ -26,6 +19,9 @@ function Display({ pokemon }) {
               alt="profile"
             />
             <CardContent>
+              <Typography variant="body1" color="primary" className={styles.cardtitle}>
+                {poke.name}
+              </Typography>
               <CardActions>
                 <Link className={styles.link} to={`${poke.name}`}>
                   details

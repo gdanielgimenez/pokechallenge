@@ -11,6 +11,7 @@ import {
 function Filter({ dropFilter, pokeList, search }) {
   const [value, setValue] = useState(['']);
   const [searchValue, setSearchValue] = useState(['']);
+
   const handleChange = (e) => {
     setValue(e.target.value);
     dropFilter(e.target.value);
@@ -23,6 +24,13 @@ function Filter({ dropFilter, pokeList, search }) {
   const handleSearch = (e) => {
     setSearchValue(e.target.value);
   };
+  let List;
+  const noDup = () => {
+    if (pokeList) {
+      List = Array.from(new Set(pokeList.map((poke) => poke.name)));
+    }
+  };
+  noDup();
   return (
     <div>
       <Box sx={{ flexGrow: 1 }}>
@@ -40,13 +48,13 @@ function Filter({ dropFilter, pokeList, search }) {
                   onChange={handleChange}
                 >
                   <MenuItem value="All">All</MenuItem>
-                  {pokeList.sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1))
+                  { List.sort((a, b) => (a.toLowerCase() > b.toLowerCase() ? 1 : -1))
                     .map((pokemon) => (
                       <MenuItem
-                        key={pokemon.id}
-                        value={pokemon.name}
+                        key={Math.random()}
+                        value={pokemon}
                       >
-                        {pokemon.name}
+                        {pokemon}
                       </MenuItem>
                     ))}
                 </Select>

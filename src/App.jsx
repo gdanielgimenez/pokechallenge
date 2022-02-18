@@ -37,7 +37,11 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-            <Filter dropFilter={dropFilter} pokeList={pokeList} search={search} />
+            <Filter
+              dropFilter={dropFilter}
+              pokeList={pokeList}
+              search={search}
+            />
             <div className="App-header">
               <Typography variant="h3" color="primary" sx={{ m: 6 }}> Pokemon list </Typography>
               <Display pokemon={pokemon} pokelist={pokeList} />

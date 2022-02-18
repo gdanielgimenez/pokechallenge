@@ -8,7 +8,8 @@ export const fetchPokemon = async () => {
   try {
     const { data: { cards } } = await axios.get(pokeUrl);
     console.log(cards);
-    return cards;
+    const list = cards.filter((poke) => poke.supertype === 'Pokémon');
+    return list;
   } catch (error) {
     console.log(error);
   }

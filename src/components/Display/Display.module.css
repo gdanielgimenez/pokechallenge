@@ -13,16 +13,15 @@
     height: 165px;
     align-items: center;
     margin: 75px 50px /*14px*/;
-   
     /*overflow: hidden;*/
     overflow: visible !important;
     position: relative;
     align-items: center;
+    transition:750ms ease-in-out !important;
 }
 .card:hover{
     transform: scale(1.06);
     height: 225px;
-    transition: 650ms ease-in;
 }
 .card:hover .profile{
     content: "";
@@ -32,11 +31,12 @@
 .card:hover .cardtitle{
     display: flex;
     animation:FadeIn linear 1.75s;
+    transition: 0.9s  ease-in-out;
     
 }
 .cardtitle{
     display: none;
-   margin-top: -40% !important;
+    margin-top: -40% !important;
 }
 @keyframes FadeIn {
     0% {opacity:0;}

@@ -58,7 +58,9 @@ function Pages({ pokemon }) {
                 <CardContent>
                   <Typography color="brown" variant="h4">
                     {' '}
-                    Type:
+                    Type :
+                    {' '}
+                    {' '}
                     {pokemonPage[0].types[0]}
                   </Typography>
                   <Typography color="textSecondary" variant="h6">

@@ -10,8 +10,11 @@ function App() {
   const [pokeList, setPokeList] = useState(['']);
   useEffect(() => {
     const pokeFetch = async () => {
-      setPokemon(await fetchPokemon());
-      setPokeList(await fetchPokemon());
+      const response = await fetchPokemon();
+      /* setPokemon(await fetchPokemon());
+      setPokeList(await fetchPokemon()); */
+      setPokemon(response);
+      setPokeList(response);
     };
     pokeFetch();
   }, []);
